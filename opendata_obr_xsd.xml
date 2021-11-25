@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="result">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="region">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="rada" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="head" minOccurs="0">
+                      <xs:complexType>
+                      <xs:annotation>
+                        <xs:documentation>
+                          Відомості про обраного голову:
+                          PIB - прізвище, ім’я, по батькові;
+                          DN - дата народження;
+                          N022 - освіта;
+                          F13 - партійність;
+                          F8 - посада (заняття);
+                          F9 - місце роботи;
+                          F63 - місце проживання;
+                          F50 - кількість голосів виборців, поданих на його підтримку;
+                          NOMINATED - суб’єкт висування;
+                          PROCESS - виборчий процес, на якому обрано;
+                          DATE_OF_APPOINTMENT - дата рішення про обрання.
+                        </xs:documentation>
+                      </xs:annotation>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="PIB"/>
+                          <xs:element type="xs:string" name="DN"/>
+                          <xs:element type="xs:string" name="N022"/>
+                          <xs:element type="xs:string" name="F13"/>
+                          <xs:element type="xs:string" name="F8"/>
+                          <xs:element type="xs:string" name="F9"/>
+                          <xs:element type="xs:string" name="F63"/>
+                          <xs:element type="xs:string" name="F50"/>
+                          <xs:element type="xs:string" name="NOMINATED"/>
+                          <xs:element type="xs:string" name="PROCESS"/>
+                          <xs:element type="xs:string" name="DATE_OF_APPOINTMENT"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="deputies">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="deputy" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:annotation>
+                                <xs:documentation>
+                                  Відомості про обраних депутатів:
+                                  PIB - прізвище, ім’я, по батькові;
+                                  DN - дата народження;
+                                  N022 - освіта;
+                                  F13 - партійність;
+                                  F8 - посада (заняття);
+                                  F9 - місце роботи;
+                                  F63 - місце проживання;
+                                  DISTRICT - виборчий округ, у якому обраний депутат;
+                                  F58 - кількість голосів виборців, поданих на його підтримку;
+                                  NOMINATED - суб’єкт висування;
+                                  PROCESS - виборчий процес, на якому обрано;
+                                  DATE_OF_APPOINTMENT - дата рішення про обрання.
+                                </xs:documentation>
+                              </xs:annotation>
+                              <xs:sequence>
+                                <xs:element type="xs:string" name="PIB"/>
+                                <xs:element type="xs:string" name="DN"/>
+                                <xs:element type="xs:string" name="N022"/>
+                                <xs:element type="xs:string" name="F13"/>
+                                <xs:element type="xs:string" name="F8"/>
+                                <xs:element type="xs:string" name="F9"/>
+                                <xs:element type="xs:string" name="F63"/>
+                                <xs:element type="xs:string" name="DISTRICT"/>
+                                <xs:element type="xs:string" name="F58"/>
+                                <xs:element type="xs:string" name="NOMINATED"/>
+                                <xs:element type="xs:string" name="PROCESS"/>
+                                <xs:element type="xs:string" name="DATE_OF_APPOINTMENT"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:int" name="id" use="optional"/>
+                  <xs:attribute type="xs:string" name="name" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:byte" name="id"/>
+            <xs:attribute type="xs:string" name="name"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
